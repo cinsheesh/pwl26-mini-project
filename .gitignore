@@ -1,0 +1,27 @@
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Generated Prisma Client
+generated/
+
+# Logs
+*.log
+
+# Editor
+.vscode/
+
+
+# AI and editor configuration
+.agents/
+.claude/
+.windsurf/
+
+# Postman local configuration
+.postman/
+

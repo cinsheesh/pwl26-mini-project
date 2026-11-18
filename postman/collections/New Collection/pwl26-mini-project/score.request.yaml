@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{baseUrl}}/scores/5"
+method: DELETE
+headers:
+  Content-Type: application/json
+  x-api-key: rahasia123
+order: 6000

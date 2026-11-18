@@ -1,0 +1,23 @@
+$kind: http-request
+name: students
+url: "{{baseUrl}}/students/6"
+method: PUT
+headers:
+  Content-Type: application/json
+  x-api-key: rahasia123
+body:
+  type: json
+  content: "{\r
+
+    \    \"nim\": \"F1D026009\",\r
+
+    \    \"name\": \"Cindy Natasya\",\r
+
+    \    \"major\": \"Sistem Informasi\",\r
+
+    \    \"gpa\": 3.90,\r
+
+    \    \"birthdate\": \"2003-08-15\"\r
+
+    }\r\n"
+order: 3000

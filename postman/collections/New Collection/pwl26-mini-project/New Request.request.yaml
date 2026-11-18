@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{baseUrl}}/students/6"
+method: DELETE
+headers:
+  Content-Type: application/json
+  x-api-key: rahasia123
+order: 4000

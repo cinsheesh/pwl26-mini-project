@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+
+
+model Student {
+  id         Int      @id @default(autoincrement())
+  nim        String   @unique @db.VarChar(20)
+  name       String   @db.VarChar(100)
+  major      String   @db.VarChar(100)
+  gpa        Float    @default(0)
+  birthdate  DateTime @db.Date
+  createdAt  DateTime @default(now())
+  scoreCount Int      @default(0)
+
+  scores     Score[]
+}
+
+model Score {
+  id        Int     @id @default(autoincrement())
+  studentId Int
+  course    String  @db.VarChar(100)
+  score     Float
+
+  student   Student @relation(fields: [studentId], references: [id])
+}
+

@@ -1,0 +1,25 @@
+$kind: http-request
+name: students
+url: "{{baseUrl}}/students"
+method: POST
+headers:
+  Content-Type: application/json
+  x-api-key: rahasia123
+body:
+  type: json
+  content: "\r
+
+    {\r
+
+    \    \"nim\": \"F1D026010\",\r
+
+    \    \"name\": \"Putri Amelia\",\r
+
+    \    \"major\": \"Informatika\",\r
+
+    \    \"gpa\": 3.80,\r
+
+    \    \"birthdate\": \"2003-07-12\"\r
+
+    }\r\n"
+order: 2000

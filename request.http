@@ -1,0 +1,74 @@
+@baseUrl = http://localhost:3000
+@apiKey = rahasia123
+
+### Menampilkan seluruh mahasiswa
+GET {{baseUrl}}/students
+
+
+### Menambahkan mahasiswa baru
+POST {{baseUrl}}/students
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+{
+    "nim": "F1D021001",
+    "name": "Tara Sudiman",
+    "major": "Informatika",
+    "gpa": 3.85,
+    "birthdate": "2003-05-15"
+}
+
+### Menampilkan seluruh mahasiswa
+GET {{baseUrl}}/students
+
+### Filter jurusan Informatika
+GET {{baseUrl}}/students?major=Informatika
+
+### Paginasi halaman pertama
+GET {{baseUrl}}/students?halaman=1&ukuran=2
+
+### Paginasi halaman kedua
+GET {{baseUrl}}/students?halaman=2&ukuran=2
+
+### Menghapus mahasiswa
+DELETE {{baseUrl}}/students/5
+x-api-key: {{apiKey}}
+
+### Menambahkan nilai student
+POST {{baseUrl}}/scores
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+{
+    "studentId": 1,
+    "course": "Basis Data",
+    "score": 85
+}
+
+### Menampilkan Student beserta Score
+GET {{baseUrl}}/students/1/scores
+
+
+### Menguji Transaction - Menambahkan Score
+POST {{baseUrl}}/scores
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+{
+    "studentId": 1,
+    "course": "Kecerdasan Buatan",
+    "score": 92
+}
+
+
+### Menguji Rollback Transaction
+POST {{baseUrl}}/scores
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+{
+    "studentId": 1,
+    "course": "Pengujian Rollback",
+    "score": 80
+}
+

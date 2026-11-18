@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{baseUrl}}/scores"
+method: POST
+headers:
+  Content-Type: application/json
+  x-api-key: rahasia123
+body:
+  type: json
+  content: "\r
+
+    {\r
+
+    \    \"studentId\": 1,\r
+
+    \    \"course\": \"Pemrograman Paralel\",\r
+
+    \    \"score\": 95\r
+
+    }\r\n"
+order: 5000
